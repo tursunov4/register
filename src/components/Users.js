@@ -49,13 +49,16 @@ function Users() {
       })
     }
     const Deleted =(id)=>{
-   
+     
       console.log(id);
     http.delete(`/user/${id}/`,{
       headers : {
         'Authorization': 'Basic YWRtaW46MTIz'
       }
     }).then((res) => {console.log(res);})
+     setTimeout(() => {
+      window.location.reload()
+     }, 300);
     }
     const editUser =(id , username, firsname, lastname, age,email,address, number) =>{
       setOpen2(true)
